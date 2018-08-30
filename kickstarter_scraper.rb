@@ -8,7 +8,10 @@ def create_project_hash
   
   projects={}
   
-  kickstarter.css("li.project.grid_4").each {|p| projects[p]={}}
+  kickstarter.css("li.project.grid_4").each {|p| 
+    title= p.css("h2.bbcard_name strong a").text 
+    projects[title.to_sym]={}}
+    
   
   #binding.pry
   
